@@ -10,6 +10,11 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'socialization'
 
+group :development do
+	gem "better_errors"
+	gem 'quiet_assets'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
