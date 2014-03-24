@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324181335) do
+ActiveRecord::Schema.define(version: 20140324183346) do
 
   create_table "follows", force: true do |t|
     t.string   "follower_type"
@@ -45,6 +45,13 @@ ActiveRecord::Schema.define(version: 20140324181335) do
 
   add_index "mentions", ["mentionable_id", "mentionable_type"], name: "fk_mentionables"
   add_index "mentions", ["mentioner_id", "mentioner_type"], name: "fk_mentions"
+
+  create_table "posts", force: true do |t|
+    t.integer  "user_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
