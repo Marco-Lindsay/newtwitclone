@@ -12,8 +12,21 @@
   </head>
 
   <body>
-<%= render 'layouts/header' %>
-    <%= yield %>
+    
+      <%= render 'layouts/header' %>
+          <div class="row">
+                        <% if notice %>
+            <p class="alert-box success"><%= notice %></p>
+                    <% end %>
+                    <% if alert %>
+            <p class="alert-box error"><%= alert %></p>
+                    <% end %>
+            <div class="large-8 columns">
+
+              <%= yield %>
+            </div>
+          </div>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>
