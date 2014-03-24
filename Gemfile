@@ -8,6 +8,7 @@ gem 'sqlite3'
 
 gem 'foundation-rails'
 gem 'devise'
+gem 'socialization'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
