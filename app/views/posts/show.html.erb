@@ -10,7 +10,7 @@
 </p>
 
 <% if @post.user == current_user %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Destroy', post_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+<strong><%= link_to 'Edit', edit_post_path(@post) %> </strong>|
+<strong><%= link_to 'Delete', post_path, method: :delete, data: { confirm: 'Are you sure?' } %></strong>
 <% end %>
 <%# link_to_if(user_session_path?,'Edit',edit_post_path(@post) )   %>
