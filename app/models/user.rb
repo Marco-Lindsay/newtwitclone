@@ -5,9 +5,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 
- validates_presence_of :name, :email
+	validates_presence_of :name, :email
 
-has_many :posts
+	has_many :posts
+	
+	acts_as_follower
+	acts_as_followable
 
 
 end
