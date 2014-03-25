@@ -9,8 +9,8 @@
   <%= @post.content %>
 </p>
 
-<%# if post.current_user %>
+<% if @post.user == current_user %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Destroy', post_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%# end %>
-
+<% end %>
+<%# link_to_if(user_session_path?,'Edit',edit_post_path(@post) )   %>

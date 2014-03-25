@@ -7,7 +7,12 @@ class UsersController < ApplicationController
       format.json { render json: @users }
     end
  end
-
+def follow
+	@user = User.find(params[:id])
+	current_user.toggle_follow!(@user)
+	redirect_to users_path
+	
+end
 
   def show
   end
