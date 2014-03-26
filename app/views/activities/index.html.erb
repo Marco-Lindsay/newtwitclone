@@ -1,0 +1,9 @@
+<h1>Post Feed</h1>
+
+<% @activities.each do |activity| %>
+  <div class="activity">
+    <%= link_to activity.owner.name.capitalize, activity.owner if activity.owner %>
+    Posted <% link_to activity.trackable.content, activity.trackable.content %>
+  </div>
+<% end %>
+

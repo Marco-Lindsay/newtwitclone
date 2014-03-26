@@ -6,6 +6,7 @@ Twitclone::Application.routes.draw do
   get "users/show"
   devise_for :users
   resources :users
+  resources :activities
   get "home/index"
   get 'users/follow/:id', to: 'users#follow', as: 'follow'
   
