@@ -1,3 +1,4 @@
+<%= render 'header' %>
 <h1>Listing users</h1>
 
 <table>
@@ -11,13 +12,18 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.name %></td>
+        <td><%= link_to user.name, user %></td>
         <td><%= user.email %></td>
-        <td><% if current_user.follows?(user) %>
-          <%= link_to 'Unfollow', follow_path(user) %>
-          <%else%>
-          <%= link_to 'Follow', follow_path(user) %>
-          <%end%>
+        <td><% if user == current_user %>
+              <%= link_to 'Following' %>
+            <%else%>
+                  <% if current_user.follows?(user) %>
+                    <%= link_to 'Unfollow', follow_path(user) %>
+                  <%else%>
+                    <%= link_to 'Follow', follow_path(user) %>
+                  <%end%>
+            <%end%>
+
         </td>
       </tr>
     <% end %>
