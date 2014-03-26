@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.0.4'
-gem 'sqlite3'
+
 gem 'foundation-rails'
 gem 'devise'
 gem 'socialization'
@@ -13,13 +13,17 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
-group :development do
+group :development, :test do
 	gem "better_errors"
 	gem 'quiet_assets'
 	gem 'rails_layout'
-
+	gem 'sqlite3'
 end
 
+group :production do
+	gem 'pg'
+
+end
 group :doc do
   gem 'sdoc', require: false
 end
