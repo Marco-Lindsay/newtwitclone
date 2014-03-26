@@ -9,7 +9,8 @@ Twitclone::Application.routes.draw do
   resources :activities
   get "home/index"
   get 'users/follow/:id', to: 'users#follow', as: 'follow'
-  
+  get 'activities/show', to: 'activities#show'
+
   root to: 'home#index'
   
   # The priority is based upon order of creation: first created -> highest priority.

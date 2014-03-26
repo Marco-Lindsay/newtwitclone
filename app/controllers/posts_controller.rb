@@ -26,6 +26,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id if current_user
+    # @post.create_activity :create, owner: current_user
 
     respond_to do |format|
       if @post.save
@@ -56,6 +57,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1.json
   def destroy
     @post.destroy
+    # @post.create_activity :destroy, owner: current_user
     respond_to do |format|
       format.html { redirect_to posts_url }
       format.json { head :no_content }

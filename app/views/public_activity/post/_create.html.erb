@@ -1,6 +1,10 @@
-added post
+posted
 
 
-  <%= link_to activity.trackable, activity.trackable %>
+ <% if activity.trackable %>
+  <%= link_to activity.trackable.content, activity.trackable%>
+  <%=time_ago_in_words(activity.trackable.created_at)+ " ago" %> 
+  <% else %>
+  that is no longer available
+  <%end%>
 
- 

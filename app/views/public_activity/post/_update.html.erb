@@ -1,4 +1,8 @@
-updated post
+changed post
 
-
-  on <%= link_to activity.trackable, activity.trackable%>
+<% if activity.trackable %>
+  on <%= link_to activity.trackable.content, activity.trackable%>
+  <%=time_ago_in_words(activity.trackable.updated_at)+ " ago" %> 
+  <% else %>
+  that is no longer available
+  <%end%>
