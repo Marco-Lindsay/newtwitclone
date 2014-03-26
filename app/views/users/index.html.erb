@@ -1,21 +1,22 @@
 <%= render 'header' %>
 <h1>Listing users</h1>
+<br>
 
 <table>
-  <thead>
+ <!--  <thead>
     <tr>
       <th>Name</th>
       <th>Email</th>
     </tr>
   </thead>
-
+ -->
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= link_to user.name, user %></td>
-        <td><%= user.email %></td>
+        <td><%= link_to user.name.capitalize, user %></td>
+        <td><%= link_to user.email, user %></td>
         <td><% if user == current_user %>
-              <%= link_to 'Following' %>
+               <strong>You</strong>
             <%else%>
                   <% if current_user.follows?(user) %>
                     <%= link_to 'Unfollow', follow_path(user) %>
