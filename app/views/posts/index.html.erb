@@ -1,4 +1,4 @@
-<%= render 'header' %>
+<%= render 'posts/header' %>
 
 <h1>All Posts</h1>
 <br>
@@ -9,9 +9,6 @@
       <tr>
         <td><%= post.user.name.capitalize if post.user %></td>
         <td><%= link_to post.content, post %></td>
-       <!--  <td><%# link_to 'Show', post %></td>
-        <td><%# link_to 'Edit', edit_post_path(post) %></td>
-        <td><%# link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
